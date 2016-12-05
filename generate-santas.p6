@@ -34,7 +34,7 @@ sub send-santa-email($santa, $santa-email,  $santee) {
 }
 
 sub generate-santas($groups) {
-    my @santas = @$groups.flat;
+    my @santas = $groups.flat;
     my %pairs;
     repeat {
         %pairs = @santas Z=> @santas.permutations.pick;

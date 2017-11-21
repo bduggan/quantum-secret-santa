@@ -47,8 +47,8 @@ sub generate-santas($groups) {
 sub MAIN(Bool :$test) {
     my %gives-to = generate-santas($groups);
     for %gives-to.keys.sort -> $santa {
-        my $santee = %gives-to<<$santa>>;
-        my $email = %emails<<$santa>> or die "no email address for $santa";
+        my $santee = %gives-to{$santa};
+        my $email = %emails{$santa} or die "no email address for $santa";
         if $test {
             say "$santa gives to $santee";
             next;

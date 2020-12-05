@@ -44,7 +44,7 @@ sub generate-santas($groups) {
     return %pairs;
 }
 
-sub MAIN(Bool :$test) {
+sub MAIN(Bool :$test = True) {
     my %gives-to = generate-santas($groups);
     for %gives-to.keys.sort -> $santa {
         my $santee = %gives-to{$santa};
